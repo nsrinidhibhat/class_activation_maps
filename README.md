@@ -1,1 +1,6 @@
-# class_activation_maps
+# Class Activation Maps
+Class Activation Maps (CAM) is a powerful technique used in Computer Vision for classification tasks. It allows the scientist to inspect the image to be categorized and understand which parts/pixels of that image have contributed more to the final output of the model.
+
+A CAM is a weighted activation map generated for each image. It helps to identify the region a CNN is looking at while classifying an image. CAMs aren’t trained supervised, but in a weakly supervised fashion. This means, that the objects do not have to be labeled manually and the localization is kind of learned for “free”. The only thing that has to be changed on the architecture is to get rid of the fully connected dense layers at the end in order to maintain the spatial information contained in the output of the last convolution layer. In addition, a global average pooling layer is added afterwards. This layer is usually used for regularization in order to prevent the network from overfitting. Finally, the output softmax layer with as many neurons as classes to classify is added. Figure below summarizes the required architecture and shows how to compute the CAM.
+
+![1-O5azF2X0KF1NQmpcooXF1Q](https://user-images.githubusercontent.com/15133695/147864656-39309728-116c-497c-b6fe-7a5d6cd2e6d3.png)
